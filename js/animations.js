@@ -85,25 +85,31 @@
   });
 
   /* Stagger service cards */
-  gsap.set('.service-card', { opacity: 0, y: 28 });
-  ScrollTrigger.create({
-    trigger: '.services__grid',
-    start: 'top 85%',
-    once: true,
-    onEnter: () => {
-      gsap.to('.service-card', { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: EASE });
-    }
-  });
+  const servicesGrid = document.querySelector('.services__grid');
+  if(servicesGrid){
+    gsap.set('.service-card', { opacity: 0, y: 28 });
+    ScrollTrigger.create({
+      trigger: servicesGrid,
+      start: 'top 85%',
+      once: true,
+      onEnter: () => {
+        gsap.to('.service-card', { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: EASE });
+      }
+    });
+  }
 
   /* Stagger work cards */
-  gsap.set('.work-card', { opacity: 0, y: 34 });
-  ScrollTrigger.create({
-    trigger: '.work__grid',
-    start: 'top 85%',
-    once: true,
-    onEnter: () => {
-      gsap.to('.work-card', { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: EASE });
-    }
-  });
+  const workGrid = document.querySelector('.work__grid');
+  if(workGrid){
+    gsap.set('.work-card', { opacity: 0, y: 34 });
+    ScrollTrigger.create({
+      trigger: workGrid,
+      start: 'top 85%',
+      once: true,
+      onEnter: () => {
+        gsap.to('.work-card', { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: EASE });
+      }
+    });
+  }
 
 })();
