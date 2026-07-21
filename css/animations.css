@@ -1,0 +1,49 @@
+/* ==========================================================================
+   ANIMATION SUPPORT STYLES
+   Initial states for GSAP-driven page load + scroll reveals.
+   JS adds/removes classes and animates via gsap.to/from; these rules
+   just prevent a flash of fully-visible content before JS runs.
+   ========================================================================== */
+
+[data-anim]{
+  will-change: transform, opacity;
+}
+
+/* Elements JS will animate from these states on load / scroll.
+   If JS fails to load, .no-js-fallback (added via <html> class check) reveals everything. */
+.js-ready [data-anim]{
+  opacity: 0;
+}
+
+.js-ready [data-anim="hero-heading"] .line{
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.js-ready [data-anim="hero-devices"]{
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+}
+
+/* Continuous floating motion for devices — handled by GSAP timeline (infinite yoyo),
+   but declare the transform-origin here for consistency. */
+.device--laptop, .device--phone{
+  transform-origin: 50% 100%;
+}
+
+/* Mobile menu open state transitions (transform handled inline via GSAP,
+   this just ensures no snapping before JS attaches) */
+.mobile-menu{
+  transition: none; /* GSAP takes over transform animation */
+}
+
+/* Reduced motion: cancel everything, show final state instantly */
+@media (prefers-reduced-motion: reduce){
+  [data-anim], .js-ready [data-anim], .js-ready [data-anim="hero-heading"] .line, .js-ready [data-anim="hero-devices"]{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  html{ scroll-behavior: auto; }
+}
