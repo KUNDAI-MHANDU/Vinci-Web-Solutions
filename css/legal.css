@@ -1,0 +1,21 @@
+.legal-hero{padding:164px 0 74px;border-bottom:1px solid var(--line)}
+.legal-shell{width:min(100%,880px);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter)}
+.legal-label{margin-bottom:20px;color:var(--ink-soft);font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.legal-title{margin-bottom:18px;font-family:var(--font-display);font-size:clamp(3rem,6vw,5rem);font-weight:500;letter-spacing:-.03em;line-height:1}
+.legal-date{margin-bottom:30px;color:var(--graphite);font-size:.82rem;font-weight:600;letter-spacing:.04em}
+.legal-intro{max-width:65ch;color:var(--ink-soft);font-size:1.04rem;line-height:1.8}
+.legal-intro--secondary{margin-top:16px}
+.legal-content{padding-top:82px;padding-bottom:112px}
+.legal-section{display:grid;grid-template-columns:52px minmax(0,1fr);gap:24px;padding:42px 0;border-top:1px solid var(--line)}
+.legal-section:first-child{padding-top:0;border-top:0}
+.legal-section__number{padding-top:5px;color:var(--graphite);font-family:var(--font-display);font-size:1rem}
+.legal-section h2{margin-bottom:18px;font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.15rem);font-weight:500;line-height:1.15}
+.legal-section p,.legal-section li{color:var(--ink-soft);font-size:.96rem;line-height:1.8}
+.legal-section p a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.legal-section p+p,.legal-section ul+p,.legal-section p+ul{margin-top:16px}
+.legal-section ul{display:grid;gap:8px;padding-left:20px;list-style:disc}
+.legal-contact{margin-top:20px;padding:24px;border:1px solid var(--line);border-radius:var(--radius-m);background:var(--paper-alt);font-style:normal}
+.legal-contact p+p{margin-top:7px}.legal-contact a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.site-footer__legal a[aria-current="page"]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+@media(max-width:768px){.legal-hero{padding:132px 0 58px}.legal-content{padding-top:58px;padding-bottom:82px}.legal-section{grid-template-columns:40px minmax(0,1fr);gap:14px;padding:34px 0}}
+@media(max-width:480px){.legal-title{font-size:2.75rem}.legal-intro{font-size:.96rem}.legal-section{grid-template-columns:1fr;gap:10px}.legal-section__number{padding-top:0}.legal-section p,.legal-section li{font-size:.94rem;line-height:1.75}.legal-contact{padding:20px}}

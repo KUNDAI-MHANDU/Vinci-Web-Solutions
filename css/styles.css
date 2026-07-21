@@ -554,6 +554,13 @@ a:focus-visible, button:focus-visible{
   background-position: center;
   margin-bottom: 18px;
 }
+.work-card__preview{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform var(--dur-med) var(--ease);
+}
 /* Placeholder art per project (no external image deps) */
 .work-card__image--nexora{ background: linear-gradient(155deg, #2b2f33 0%, #14161a 60%, #1c2226 100%); }
 .work-card__image--homely{ background: linear-gradient(155deg, #3d3d38 0%, #1c1c19 65%); }
@@ -589,8 +596,7 @@ a:focus-visible, button:focus-visible{
 
 .work-card:hover .work-card__overlay{ opacity: 1; }
 .work-card:hover .work-card__overlay-btn{ transform: translateY(0); opacity: 1; }
-.work-card:hover .work-card__image{ transform: scale(1.02); }
-.work-card__image{ transition: transform var(--dur-med) var(--ease); }
+.work-card:hover .work-card__preview{ transform: scale(1.025); }
 
 .work-card__meta{
   display: flex; align-items: flex-start; justify-content: space-between;
@@ -622,6 +628,38 @@ a:focus-visible, button:focus-visible{
 .brand--footer{ margin-bottom: 20px; }
 .footer-col__desc{ font-size: 0.88rem; line-height: 1.65; color: var(--graphite); max-width: 34ch; margin-bottom: 22px; }
 .footer-col__heading{ font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; margin-bottom: 14px; }
+
+.footer-nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+.footer-nav__link{
+  position: relative;
+  padding-bottom: 4px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color var(--dur-fast) var(--ease);
+}
+.footer-nav__link::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width var(--dur-fast) var(--ease);
+}
+.footer-nav__link:hover{
+  color: var(--ink);
+}
+.footer-nav__link:hover::after{
+  width: 100%;
+}
 
 .footer-socials{ display: flex; gap: 12px; }
 .footer-social{

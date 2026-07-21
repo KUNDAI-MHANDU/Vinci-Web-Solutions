@@ -25,7 +25,7 @@
       gsap.to(mobileMenu, { xPercent: 0, duration: 0.45, ease: EASE });
       gsap.fromTo('.mobile-menu__link',
         { opacity: 0, x: 16 },
-        { opacity: 1, x: 0, duration: 0.4, stagger: 0.06, delay: 0.15, ease: EASE }
+        { opacity: 1, x: 0, duration: 0.9, stagger: 0.06, delay: 0.45, ease: EASE }
       );
     };
     window.gsapMobileMenuClose = function(){
@@ -36,8 +36,8 @@
   /* ---------- Page load sequence ---------- */
   const tl = gsap.timeline({ defaults: { ease: EASE } });
 
-  tl.to('.site-header', { opacity: 1, y: 0, duration: 0.6 }, 0)
-    .fromTo('.site-header', { y: -20 }, { y: 0, duration: 0.6 }, 0)
+  tl.to('.site-header', { opacity: 1, y: 0, duration: 1.6 }, 0)
+    .fromTo('.site-header', { y: -20 }, { y: 0, duration: 1.6 }, 0)
 
     .to('[data-anim="hero-eyebrow"]', { opacity: 1, duration: 0.5 }, 0.2)
     .to('[data-anim="hero-heading"] .line', {
@@ -79,7 +79,7 @@
       start: 'top 85%',
       once: true,
       onEnter: () => {
-        gsap.to(el, { opacity: 1, y: 0, duration: 0.7, ease: EASE });
+        gsap.to(el, { opacity: 1, y: 0, duration: 2.4, ease: EASE });
       }
     });
   });
