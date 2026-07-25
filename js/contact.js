@@ -13,12 +13,16 @@
     button.disabled=true; button.setAttribute('aria-busy','true'); button.firstChild.textContent='Sending… ';
     status.textContent='';
     try{
-      const response=await fetch('/',{
+      const response=await fetch('https://formsubmit.co/ajax/info@vincidigital.online',{
         method:'POST',
-        headers:{'Content-Type':'application/x-www-form-urlencoded'},
-        body:new URLSearchParams(new FormData(form)).toString()
+        headers:{
+          'Content-Type':'application/json',
+          'Accept':'application/json'
+        },
+        body:JSON.stringify(Object.fromEntries(new FormData(form)))
       });
-      if(!response.ok)throw new Error('Form submission failed');
+      const result=await response.json();
+      if(!response.ok||result.success===false)throw new Error('Form submission failed');
       form.reset();
       status.textContent='Thanks — your message is ready for us. We’ll be in touch within one working day.';
     }catch(error){
